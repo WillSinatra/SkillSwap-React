@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Arial Rounded MT Bold', Arial, sans-serif;
+  /* Fondo gradiente profesional y suave */
+  background: linear-gradient(135deg, #7ec6f8 0%, #4072ee 60%, #233a6c 100%);
+  min-height: 100vh;
+  color: #222;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  left: 0; top: 0; right: 0; height: 150px;
+  background: linear-gradient(180deg,rgba(23,47,86,0.18) 0%,rgba(255,255,255,0.00) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Wrapper para sticky footer */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NAVIGATION BAR - gradiente blanco con sombreado negro */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36px;
+  height: 80px;
+  background: linear-gradient(90deg, #ffffff 60%, #e6e6e6 90%, #222 100%);
+  box-shadow: 0 6px 22px 0 rgba(36, 61, 119, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* LOGO imagen más grande */
+.nav-left .nav-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Si tienes el texto .nav-logo, ocultalo y usa solo la imagen */
+/*
+.nav-left .nav-logo {
+  display: none;
+}
+*/
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 7px 12px;
+  border-radius: 5px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.2s;
+  box-shadow: 0 0px 0px rgba(70,120,255,0.00);
+}
+.nav-link:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #3b75d9 0%, #234587 100%);
+  box-shadow: 0 2px 8px rgba(70,120,255,0.10);
+}
+
+.nav-login-btn {
+  background: linear-gradient(90deg, #56aaff 0%, #3958a8 100%);
+  color: #f4f9ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px 22px;
+  cursor: pointer;
+  box-shadow: 0 3px 16px 0 rgba(30,60,130,0.11);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.nav-login-btn:hover {
+  background: linear-gradient(90deg, #4da6ff 0%, #234587 100%);
+  color: #fff;
+  box-shadow: 0 6px 22px 0 rgba(36, 61, 119, 0.21);
+}
+
+/* Hero Section con glassmorphism y sombra */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: px 0 48px 0;
+  background: rgba(255,255,255,0.10);
+  border-radius: 32px;
+  box-shadow: 0 12px 40px 0 rgba(54, 101, 197, 0.12), 0 4px 14px 0 rgba(0,0,0,0.10);
+  padding: 46px 26px 32px 45px;
+  backdrop-filter: blur(9px);
+  border: 1.5px solid rgba(255,255,255,0.21);
+}
+
+.home-logo {
+  font-size: 52px;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin: 0 0 14px 0;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(30,90,200,0.16);
+}
+
+.home-tagline {
+  font-size: 22px;
+  margin: 0 0 17px 0;
+  color: #eaf1fa;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(70,120,255,0.11);
+}
+
+.home-subtitle {
+  font-size: 27px;
+  color: #e3ecf9;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(70,120,255,0.12);
+}
+
+footer {
+  text-align: center;
+  padding: 28px 0 18px 0;
+  color: #e3ecf9;
+  font-size: 15px;
+  text-shadow: 0 1px 5px rgba(54, 101, 197, 0.13);
+  /* Para que quede abajo si hay poco contenido */
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .main-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+    border-radius: 0 0 16px 16px;
+  }
+  .hero-section {
+    margin: 36px 0 24px 0;
+    padding: 20px 10px 18px 10px;
+  }
+  .nav-links {
+    gap: 13px;
+  }
+  .home-logo {
+    font-size: 34px;
+  }
+  .home-tagline, .home-subtitle {
+    font-size: 16px;
+  }
+  .nav-left .nav-logo-img {
+    height: 42px;
+  }
+}
