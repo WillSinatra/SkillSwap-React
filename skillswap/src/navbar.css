@@ -25,25 +25,27 @@
   padding: 0;
 }
 
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.08rem;
-  transition: color 0.18s;
+/* Sombreado gris suave al pasar el mouse */
+.nav-link,
+.nav-login-btn {
+  transition: background 0.18s, color 0.18s;
 }
 
-.nav-link:hover {
-  color: #1dd1a1;
+.nav-link:hover,
+.nav-login-btn:hover {
+  background: #eaeaea;
+  color: #222;
+  border-radius: 8px;
 }
 
 .nav-login-btn,
 .nav-signup-btn {
-  padding: 0.42em 1.3em;
+  background: #1dd1a1;
+  color: #fff;
   border: none;
   border-radius: 22px;
-  font-size: 1rem;
   font-weight: 600;
+  padding: 0.42em 1.3em;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
 }
