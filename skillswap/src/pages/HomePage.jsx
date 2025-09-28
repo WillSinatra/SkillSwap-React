@@ -130,7 +130,7 @@ function HomePage() {
               Intercambia habilidades. Conecta. Crece.
             </p>
             <p className="home-subtitle">
-              Only in the same place.
+              Todo en el mismo lugar.
             </p>
             <div className="hero-buttons">
               <button className="hero-btn-main" onClick={handleRegisterClick}>
