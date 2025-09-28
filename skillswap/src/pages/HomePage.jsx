@@ -6,13 +6,30 @@ import { LuRepeat } from "react-icons/lu";
 import { PiTargetDuotone, PiLightbulbFilamentFill, PiArrowLeftLight, PiCheckCircleDuotone, PiStarDuotone } from "react-icons/pi";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import "../index.css";
+import { useEffect } from "react";
+
+
 
 function HomePage() {
   const [showAbout, setShowAbout] = useState(false);
   const [showWhatIs, setShowWhatIs] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
+  
 
+  useEffect(() => {
+    if (window.location.hash === "#register") {
+      setShowRegister(true);
+      setShowAbout(false);
+      setShowWhatIs(false);
+      setShowLogin(false);
+      setTimeout(() => {
+        document.getElementById("register-section")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, []);
+  
   function handleAboutClick(e) {
     e.preventDefault();
     setShowAbout(true);
@@ -380,6 +397,7 @@ function HomePage() {
           </section>
         </main>
       )}
+
 
       {/* FOOTER */}
       <footer>

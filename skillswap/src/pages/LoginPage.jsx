@@ -1,43 +1,93 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"; // corrige la ruta si es diferente
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+import { PiEye, PiEyeClosed } from "react-icons/pi";
 import "../navbar.css";
 import "../index.css";
 
-function HomePage() {
+function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  function handleBackHome(e) {
+    e.preventDefault();
+    navigate("/");
+  }
+
+  function handleRegister(e) {
+    e.preventDefault();
+    navigate("/");
+    // Si tienes lógica adicional para abrir el registro, agrégala aquí
+  }
+
   return (
     <div className="page-wrapper">
-      <nav className="main-nav">
+      {/* NAVBAR MINIMALISTA */}
+      <nav className="main-nav about-navbar">
         <div className="nav-left">
-          <img src={logo} alt="SkillSwap Logo" className="nav-logo-img" />
+          <Link to="/">
+            <img src={logo} alt="SkillSwap Logo" className="nav-logo-img" />
+          </Link>
         </div>
-        <ul className="nav-links">
-          <li>
-            <Link to="/quienes-somos" className="nav-link">¿Quiénes somos?</Link>
-          </li>
-          <li>
-            <Link to="/que-es-skillswap" className="nav-link">¿Qué es SkillSwap?</Link>
-          </li>
-          <li>
-            <Link to="/login">
-              <button className="nav-login-btn">Iniciar sesión</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/signup">
-              <button className="nav-signup-btn">Registrarse</button>
-            </Link>
-          </li>
-        </ul>
+        <div className="about-back" onClick={handleBackHome} style={{ cursor: "pointer" }}>
+          <span style={{ fontWeight: 600 }}>&larr; Volver al inicio</span>
+        </div>
       </nav>
       <main>
-        <section className="hero-section">
-          <h1 className="home-logo">SKILLSWAP</h1>
-          <p className="home-tagline">Intercambia habilidades. Conecta. Crece.</p>
-          <h2 className="home-subtitle">Solo en el mismo lugar.</h2>
-          <Link to="/login">
-            <button className="hero-cta-btn">¡Únete ahora!</button>
-          </Link>
+        <section className="login-section" id="login-section">
+          <h2 className="login-welcome">Bienvenido de Vuelta</h2>
+          <h3 className="login-title">Inicio de Sesión</h3>
+          <form className="login-form">
+            <div className="login-password-wrapper">
+              <input
+                type="text"
+                placeholder="Usuario o Correo Electrónico"
+                className="login-input"
+                required
+                style={{ paddingRight: "2.7em" }} // espacio igual que la contraseña
+              />
+            </div>
+            <div className="login-password-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Contraseña"
+                className="login-input"
+                required
+                style={{ paddingRight: "2.7em" }}
+              />
+              <span
+                className="login-eye-icon"
+                onClick={() => setShowPassword((prev) => !prev)}
+                tabIndex={0}
+                role="button"
+                aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                style={{
+                  cursor: "pointer",
+                  right: "1.1em",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  position: "absolute",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                {showPassword ? <PiEyeClosed size={22} /> : <PiEye size={22} />}
+              </span>
+            </div>
+            <button type="submit" className="login-btn">
+              Iniciar sesión
+            </button>
+          </form>
+          <div className="login-register-link">
+            ¿No tienes cuenta?{" "}
+          <a href="/#register" className="login-register-link-btn">
+           Registrarse
+          </a>
+          </div>
         </section>
       </main>
       <footer>
@@ -47,4 +97,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default LoginPage;

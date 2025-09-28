@@ -877,3 +877,144 @@ body {
   color: #7b61ff;
   text-decoration: underline;
 }
+
+/* LOGIN MINIMALISTA */
+.login-section {
+  margin: 3.2rem auto 0 auto;
+  padding: 2.4rem 2rem 2.5rem 2rem;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(44,90,255,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-welcome {
+  font-size: 2.1em;
+  font-weight: 800;
+  color: #4e7cf7;
+  text-align: center;
+  margin-bottom: 0.35em;
+  letter-spacing: 0.01em;
+}
+
+.login-title {
+  font-size: 1.28em;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1.6em;
+  letter-spacing: 0.01em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.login-input {
+  padding: 0.9em 1em;
+  border-radius: 9px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.08em;
+  background: #f7faff;
+  color: #222;
+  transition: border-color 0.18s, background 0.18s;
+  margin-bottom: 0.08em;
+  width: 100%;
+}
+
+.login-input:focus {
+  border-color: #7b61ff;
+  background: #fff;
+  outline: none;
+}
+
+.login-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.login-eye-icon {
+  position: absolute;
+  right: 1.1em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  background: none;
+  border: none;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 28px;
+  padding: 0.8em 2.3em;
+  cursor: pointer;
+  margin-top: 0.6em;
+  margin-bottom: 0.8em;
+  transition: background 0.18s;
+  width: 100%;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #7b61ff 0%, #4e7cf7 100%);
+}
+
+.login-register-link {
+  text-align: center;
+  font-size: 1em;
+  color: #777;
+  margin-top: 0.2em;
+}
+.login-register-link-btn {
+  color: #4e7cf7;
+  font-weight: 700;
+  margin-left: 0.4em;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.login-register-link-btn:hover {
+  color: #7b61ff;
+  text-decoration: underline;
+}
+
+/* NAVBAR MINIMALISTA PARA LOGIN */
+.about-navbar {
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2.2em;
+}
+.about-back {
+  display: flex;
+  align-items: center;
+  font-size: 1.07rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  padding: 0.32em 1.1em 0.32em 1.1em;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  margin-right: 0.2em;
+  user-select: none;
+}
+.about-back:hover,
+.about-back:focus {
+  background: #f0f2f5;
+  color: #4e7cf7;
+}

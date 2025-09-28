@@ -17,10 +17,10 @@ function Navbar() {
           <Link to="/que-es-skillswap" className="nav-link">¿Qué es SkillSwap?</Link>
         </li>
         <li>
-          <Link to="/login">
-            <button className="nav-login-btn">Iniciar sesión</button>
-          </Link>
-        </li>
+  <a href="#login" className="nav-link nav-link-strong" onClick={handleLoginClick}>
+    Iniciar sesión
+  </a>
+</li>
         <li>
           <Link to="/signup">
             <button className="nav-signup-btn">Registrarse</button>
