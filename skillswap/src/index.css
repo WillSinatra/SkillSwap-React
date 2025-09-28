@@ -1,114 +1,137 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 217 89% 61%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 89% 70%;
-
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217 89% 61%;
-
-    /* SkillSwap Design System */
-    --gradient-primary: linear-gradient(135deg, hsl(217 89% 61%), hsl(262 83% 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%), hsl(217 89% 61%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 89% 61% / 0.1), hsl(262 83% 58% / 0.1));
-    --shadow-glow: 0 0 40px hsl(217 89% 61% / 0.3);
-    --shadow-card: 0 4px 20px hsl(217 89% 61% / 0.1);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  body {
-    @apply bg-background text-foreground;
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.home-logo {
+  font-size: 3.2rem;
+  letter-spacing: 0.14em;
+  font-weight: 900;
+  color: #1a2233;
+  margin-bottom: 0.4em;
+}
+
+.home-tagline {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 0.2em;
+}
+
+.home-subtitle {
+  color: #1dd1a1;
+  font-weight: 600;
+  margin-bottom: 2.2em;
+}
+
+.hero-cta-btn {
+  background: #1dd1a1;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 28px;
+  padding: 0.75em 2.3em;
+  cursor: pointer;
+  transition: background 0.18s;
+  margin-top: 1em;
+}
+
+.hero-cta-btn:hover {
+  background: #10ac84;
+}
+
+.home-footer {
+  color: #777;
+  font-size: 0.96em;
+  text-align: center;
+  padding: 2em 0 1em 0;
+  background: none;
+  margin-top: auto;
+}
+
+/* Login and Signup Styles */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 1em;
+}
+
+.login-form {
+  background: #fff;
+  padding: 2.5em 2em 2em 2em;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 400px;
+  gap: 1.1em;
+}
+
+.login-form h1 {
+  color: #1a2233;
+  margin-bottom: 0.5em;
+}
+
+.login-input {
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1.05em;
+  margin-bottom: 0.1em;
+}
+
+.login-btn {
+  background: #1dd1a1;
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 22px;
+  padding: 0.7em 0;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.login-btn:hover {
+  background: #10ac84;
+}
+
+.login-error {
+  color: #d63031;
+  background: #fff1f1;
+  border: 1px solid #ffeaea;
+  border-radius: 7px;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+
+@media (max-width: 640px) {
+  .main-nav {
+    flex-direction: column;
+    padding: 1.2rem 1rem;
+    gap: 1.1em;
+  }
+  .login-form {
+    min-width: unset;
+    width: 95vw;
+    padding: 2em 0.7em 1.5em 0.7em;
   }
 }

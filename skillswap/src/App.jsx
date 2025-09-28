@@ -1,34 +1,28 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import QuienesSomos from "./pages/QuienesSomos";
-import QueEsSkillSwap from "./pages/QueEsSkillSwap";
-import Dashboard from "./pages/Dashboard";
-import NotFound from "./pages/NotFound";
+import SignUpPage from "./pages/SignUpPage";
 
-const queryClient = new QueryClient();
+// Páginas de ejemplo
+function QuienesSomos() {
+  return <div className="info-page"><h1>¿Quiénes somos?</h1><p>Somos SkillSwap, una comunidad para intercambiar habilidades.</p></div>;
+}
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/quienes-somos" element={<QuienesSomos />} />
-          <Route path="/que-es-skillswap" element={<QueEsSkillSwap />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function QueEsSkillSwap() {
+  return <div className="info-page"><h1>¿Qué es SkillSwap?</h1><p>SkillSwap es una plataforma para aprender y enseñar habilidades de forma colaborativa.</p></div>;
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/quienes-somos" element={<QuienesSomos />} />
+      <Route path="/que-es-skillswap" element={<QueEsSkillSwap />} />
+    </Routes>
+  );
+}
 
 export default App;

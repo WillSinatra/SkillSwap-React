@@ -1,187 +1,213 @@
 body {
   margin: 0;
-  font-family: 'Poppins', 'Arial Rounded MT Bold', Arial, sans-serif;
-  /* Fondo gradiente profesional y suave */
-  background: linear-gradient(135deg, #7ec6f8 0%, #4072ee 60%, #233a6c 100%);
-  min-height: 100vh;
-  color: #222;
-  position: relative;
-}
-body::before {
-  content: "";
-  position: fixed;
-  left: 0; top: 0; right: 0; height: 150px;
-  background: linear-gradient(180deg,rgba(23,47,86,0.18) 0%,rgba(255,255,255,0.00) 100%);
-  z-index: 0;
-  pointer-events: none;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f7fb;
 }
 
-/* Wrapper para sticky footer */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* NAVIGATION BAR - gradiente blanco con sombreado negro */
 .main-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 36px;
-  height: 80px;
-  background: linear-gradient(90deg, #ffffff 60%, #e6e6e6 90%, #222 100%);
-  box-shadow: 0 6px 22px 0 rgba(36, 61, 119, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  position: relative;
-  z-index: 2;
+  justify-content: space-between;
+  background: #222;
+  padding: 0.7rem 2rem;
 }
 
-/* LOGO imagen más grande */
-.nav-left .nav-logo-img {
-  height: 60px;
-  width: auto;
-  display: block;
+.nav-left {
+  display: flex;
+  align-items: center;
 }
 
-/* Si tienes el texto .nav-logo, ocultalo y usa solo la imagen */
-/*
-.nav-left .nav-logo {
-  display: none;
+.nav-logo-img {
+  height: 48px;
 }
-*/
 
 .nav-links {
-  display: flex;
   list-style: none;
-  gap: 26px;
+  display: flex;
+  gap: 2rem;
   align-items: center;
   margin: 0;
   padding: 0;
 }
 
 .nav-link {
-  color: #222;
+  color: #f2f2f2;
   text-decoration: none;
-  font-size: 16px;
   font-weight: 500;
-  padding: 7px 12px;
-  border-radius: 5px;
-  transition: background 0.15s, color 0.15s, box-shadow 0.2s;
-  box-shadow: 0 0px 0px rgba(70,120,255,0.00);
+  transition: color 0.2s;
 }
+
 .nav-link:hover {
-  color: #fff;
-  background: linear-gradient(90deg, #3b75d9 0%, #234587 100%);
-  box-shadow: 0 2px 8px rgba(70,120,255,0.10);
+  color: #9bf6ff;
 }
 
 .nav-login-btn {
-  background: linear-gradient(90deg, #56aaff 0%, #3958a8 100%);
-  color: #f4f9ff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 10px 22px;
-  cursor: pointer;
-  box-shadow: 0 3px 16px 0 rgba(30,60,130,0.11);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.nav-login-btn:hover {
-  background: linear-gradient(90deg, #4da6ff 0%, #234587 100%);
+  background: #1dd1a1;
   color: #fff;
-  box-shadow: 0 6px 22px 0 rgba(36, 61, 119, 0.21);
+  border: none;
+  border-radius: 20px;
+  padding: 0.6em 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-/* Hero Section con glassmorphism y sombra */
+.nav-login-btn:hover {
+  background: #10ac84;
+}
+
 .hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: px 0 48px 0;
-  background: rgba(255,255,255,0.10);
-  border-radius: 32px;
-  box-shadow: 0 12px 40px 0 rgba(54, 101, 197, 0.12), 0 4px 14px 0 rgba(0,0,0,0.10);
-  padding: 46px 26px 32px 45px;
-  backdrop-filter: blur(9px);
-  border: 1.5px solid rgba(255,255,255,0.21);
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+  color: #1a2733;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 30px rgba(0,0,0,.07);
 }
 
 .home-logo {
-  font-size: 52px;
-  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-  text-transform: uppercase;
-  font-style: italic;
-  font-weight: bold;
-  margin: 0 0 14px 0;
-  letter-spacing: 2px;
-  color: #fff;
-  text-shadow: 0 4px 20px rgba(30,90,200,0.16);
+  font-size: 3rem;
+  letter-spacing: 0.18em;
+  margin-bottom: .5em;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .home-tagline {
-  font-size: 22px;
-  margin: 0 0 17px 0;
-  color: #eaf1fa;
-  text-align: center;
-  text-shadow: 0 1px 6px rgba(70,120,255,0.11);
+  font-size: 1.3rem;
+  margin-bottom: .2em;
 }
 
 .home-subtitle {
-  font-size: 27px;
-  color: #e3ecf9;
-  margin: 0 0 8px 0;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-  text-align: center;
-  text-shadow: 0 1px 4px rgba(70,120,255,0.12);
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 2em;
+}
+
+.hero-cta-btn {
+  background: #1dd1a1;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 0.8em 2em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hero-cta-btn:hover {
+  background: #10ac84;
 }
 
 footer {
   text-align: center;
-  padding: 28px 0 18px 0;
-  color: #e3ecf9;
-  font-size: 15px;
-  text-shadow: 0 1px 5px rgba(54, 101, 197, 0.13);
-  /* Para que quede abajo si hay poco contenido */
+  padding: 1em;
+  background: #222;
+  color: #eee;
   margin-top: auto;
+  font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 750px) {
-  .main-nav {
-    flex-direction: column;
-    height: auto;
-    padding: 16px;
-    gap: 12px;
-    border-radius: 0 0 16px 16px;
+.login-container {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background: #fff;
+  padding: 2rem 2rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(30, 200, 150, 0.12);
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 1.1em;
+}
+
+.login-form h1 {
+  margin-bottom: 0.5em;
+  color: #1dd1a1;
+  font-size: 2rem;
+}
+
+.login-input {
+  padding: 0.7em;
+  border-radius: 6px;
+  border: 1px solid #b2bec3;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-input:focus {
+  border: 1.5px solid #1dd1a1;
+}
+
+.login-btn {
+  background: #1dd1a1;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 0.7em;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #10ac84;
+}
+
+.login-error {
+  color: #ee5253;
+  background: #fff0f2;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  padding: 0.5em;
+  font-size: 0.98rem;
+  margin-bottom: -0.2em;
+  text-align: center;
+}
+
+.info-page {
+  margin: 4rem auto;
+  max-width: 600px;
+  background: #fff;
+  padding: 2em 2em 1em 2em;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(100,100,100,0.07);
+}
+
+@media (max-width: 700px) {
+  .main-nav, .hero-section, .info-page {
+    padding: 1em;
   }
-  .hero-section {
-    margin: 36px 0 24px 0;
-    padding: 20px 10px 18px 10px;
+  .login-form {
+    width: 95vw;
+    max-width: 320px;
   }
-  .nav-links {
-    gap: 13px;
-  }
-  .home-logo {
-    font-size: 34px;
-  }
-  .home-tagline, .home-subtitle {
-    font-size: 16px;
-  }
-  .nav-left .nav-logo-img {
-    height: 42px;
-  }
+}
+
+.nav-signup-btn {
+  background: #38f9d7;
+  color: #222;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6em 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.5em;
+  transition: background 0.2s;
+}
+.nav-signup-btn:hover {
+  background: #43e97b;
 }

@@ -1,57 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/navbar.css";
+import logo from "../assets/logo.png";
 
-
-function NavBar() {
+function Navbar() {
   return (
-    <nav style={styles.nav}>
-      <div style={styles.left}>
+    <nav className="main-nav">
+      <div className="nav-left">
+        <img src={logo} alt="SkillSwap Logo" className="nav-logo-img" />
       </div>
-      <ul style={styles.links}>
-        <li style={styles.link}>¿Quiénes somos?</li>
-        <li style={styles.link}>¿Qué es SkillSwap?</li>
+      <ul className="nav-links">
         <li>
-          <button style={styles.button}>SkillSwap</button>
+          <Link to="/quienes-somos" className="nav-link">¿Quiénes somos?</Link>
+        </li>
+        <li>
+          <Link to="/que-es-skillswap" className="nav-link">¿Qué es SkillSwap?</Link>
+        </li>
+        <li>
+          <Link to="/login">
+            <button className="nav-login-btn">Iniciar sesión</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/signup">
+            <button className="nav-signup-btn">Registrarse</button>
+          </Link>
         </li>
       </ul>
     </nav>
   );
 }
 
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "10px 20px",
-    backgroundColor: "#f0f0f0",
-    borderBottom: "1px solid #ccc",
-  },
-  left: {
-    display: "flex",
-    alignItems: "center",
-  },
-  logo: {
-    height: "40px",
-  },
-  links: {
-    listStyle: "none",
-    display: "flex",
-    gap: "20px",
-    margin: 0,
-    padding: 0,
-  },
-  link: {
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-  button: {
-    padding: "8px 16px",
-    backgroundColor: "#00bfff",
-    color: "#fff",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer",
-  },
-};
-
-export default NavBar;
+export default Navbar;
