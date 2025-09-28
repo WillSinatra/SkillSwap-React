@@ -1,32 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/login.css";
 
 function LoginPage() {
   const navigate = useNavigate();
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Aquí iría la validación real, por ahora solo redirige
-    navigate("/home");
+    if (user.trim() === "" || password.trim() === "") {
+      setError("Por favor completa todos los campos.");
+    } else {
+      setError("");
+      navigate("/"); // Redirige a la home
+    }
   };
 
   return (
-    <div style={styles.container}>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin} style={styles.form}>
-        <input type="text" placeholder="Usuario" style={styles.input} />
-        <input type="password" placeholder="Contraseña" style={styles.input} />
-        <button type="submit" style={styles.button}>Ingresar</button>
-      </form>
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Iniciar sesión</h1>
+        <form onSubmit={handleLogin}>
+          <input 
+            type="text" 
+            placeholder="Usuario" 
+            value={user} 
+            onChange={(e) => setUser(e.target.value)} 
+          />
+          <input 
+            type="password" 
+            placeholder="Contraseña" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+          />
+          {error && <p className="error-msg">{error}</p>}
+          <button type="submit">Ingresar</button>
+        </form>
+      </div>
     </div>
   );
 }
-
-const styles = {
-  container: { display: "flex", flexDirection: "column", alignItems: "center", marginTop: "50px" },
-  form: { display: "flex", flexDirection: "column", gap: "10px", width: "200px" },
-  input: { padding: "8px", fontSize: "16px" },
-  button: { padding: "10px", fontSize: "16px", cursor: "pointer" },
-};
 
 export default LoginPage;
