@@ -1,38 +1,75 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { FaHeart, FaUserFriends } from "react-icons/fa";
+import { FaHeart, FaUserFriends, FaRegComments } from "react-icons/fa";
 import { LuRepeat } from "react-icons/lu";
-import { PiTargetDuotone } from "react-icons/pi";
-import { PiLightbulbFilamentFill, PiArrowLeftLight } from "react-icons/pi";
+import { PiTargetDuotone, PiLightbulbFilamentFill, PiArrowLeftLight, PiCheckCircleDuotone, PiStarDuotone } from "react-icons/pi";
+import { MdOutlineCalendarMonth } from "react-icons/md";
 import "../index.css";
 
 function HomePage() {
   const [showAbout, setShowAbout] = useState(false);
+  const [showWhatIs, setShowWhatIs] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const navigate = useNavigate();
 
   function handleAboutClick(e) {
     e.preventDefault();
+    setShowAbout(true);
+    setShowWhatIs(false);
+    setShowRegister(false);
+    setTimeout(() => {
+      document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }
+
+  function handleWhatIsClick(e) {
+    e.preventDefault();
+    setShowWhatIs(true);
+    setShowAbout(false);
+    setShowRegister(false);
+    setTimeout(() => {
+      document.getElementById("what-is-section")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }
+
+  function handleRegisterClick(e) {
+    e.preventDefault();
+    setShowRegister(true);
+    setShowAbout(false);
+    setShowWhatIs(false);
+    setTimeout(() => {
+      document.getElementById("register-section")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }
+
+  function handleLogoClick() {
+    setShowAbout(false);
+    setShowWhatIs(false);
+    setShowRegister(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function handleBackHome() {
+    setShowAbout(false);
+    setShowWhatIs(false);
+    setShowRegister(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function handleConoceEquipo() {
+    setShowWhatIs(false);
+    setShowRegister(false);
     setShowAbout(true);
     setTimeout(() => {
       document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   }
 
-  function handleLogoClick() {
-    setShowAbout(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function handleBackHome() {
-    setShowAbout(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
   return (
     <div className="page-wrapper">
       {/* NAVBAR */}
-      {!showAbout ? (
+      {(!showAbout && !showWhatIs && !showRegister) ? (
         <nav className="main-nav">
           <div className="nav-left" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
             <img src={logo} alt="SkillSwap Logo" className="nav-logo-img" />
@@ -44,9 +81,9 @@ function HomePage() {
               </a>
             </li>
             <li>
-              <Link to="/que-es-skillswap" className="nav-link">
+              <a href="#what-is" className="nav-link" onClick={handleWhatIsClick}>
                 ¿Qué es SkillSwap?
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="/login" className="nav-link nav-link-strong">
@@ -68,7 +105,7 @@ function HomePage() {
       )}
 
       {/* HERO y LANDING PRINCIPAL */}
-      {!showAbout && (
+      {(!showAbout && !showWhatIs && !showRegister) && (
         <main>
           <section className="hero-section">
             <h1 className="home-logo">SKILLSWAP</h1>
@@ -79,16 +116,12 @@ function HomePage() {
               Only in the same place.
             </p>
             <div className="hero-buttons">
-              <Link to="/signup">
-                <button className="hero-btn-main">
-                  Comenzar Ahora <span style={{fontSize: "1.2em"}}>&rarr;</span>
-                </button>
-              </Link>
-              <Link to="/que-es-skillswap">
-                <button className="hero-btn-secondary">
-                  Saber Más
-                </button>
-              </Link>
+              <button className="hero-btn-main" onClick={handleRegisterClick}>
+                Comenzar Ahora <span style={{fontSize: "1.2em"}}>&rarr;</span>
+              </button>
+              <a href="#what-is" className="hero-btn-secondary" onClick={handleWhatIsClick}>
+                Saber Más
+              </a>
             </div>
           </section>
 
@@ -130,6 +163,29 @@ function HomePage() {
           </section>
         </main>
       )}
+
+      {/* REGISTRO */}
+      {showRegister && (
+
+  <main>
+    <section className="register-section" id="register-section">
+      <h2 className="register-title">Registro</h2>
+      <form className="register-form">
+        <input type="text" placeholder="Usuario" className="register-input" required />
+        <input type="email" placeholder="Correo Electrónico" className="register-input" required />
+        <input type="password" placeholder="Contraseña" className="register-input" required />
+        <input type="password" placeholder="Confirmar Contraseña" className="register-input" required />
+        <button type="submit" className="register-btn">Registrarse</button>
+      </form>
+      <div className="register-login-link">
+        ¿Ya tienes cuenta?{" "}
+        <Link to="/login" className="register-login-link-btn">
+          Iniciar sesión
+        </Link>
+      </div>
+    </section>
+  </main>
+)}
 
       {/* ¿Quiénes somos? Landing */}
       {showAbout && (
@@ -193,14 +249,133 @@ function HomePage() {
               Únete a nuestra comunidad y comienza a intercambiar habilidades hoy mismo.
             </p>
             <div className="about-call-buttons">
-              <Link to="/signup">
-                <button className="about-btn-main">
-                  Comenzar Ahora
-                </button>
-              </Link>
-              <button className="about-btn-secondary" onClick={() => navigate("/que-es-skillswap")}>
+              <button className="about-btn-main" onClick={handleRegisterClick}>
+                Comenzar Ahora
+              </button>
+              <button className="about-btn-secondary" onClick={() => setShowWhatIs(true) || setShowAbout(false)}>
                 Conoce más sobre SkillSwap
               </button>
+            </div>
+          </section>
+        </main>
+      )}
+
+      {/* ¿Qué es SkillSwap? Landing */}
+      {showWhatIs && (
+        <main>
+          {/* 1. PRIMERA IMAGEN */}
+          <section className="what-section" id="what-is-section">
+            <h2 className="what-title">¿Qué es SkillSwap?</h2>
+            <p className="what-subtitle">
+              Una plataforma innovadora que conecta personas para intercambiar habilidades y conocimientos de manera justa y colaborativa.
+            </p>
+            <div className="what-cards">
+              <div className="what-card">
+                <div className="what-icon what-icon-blue">
+                  <FaUserFriends size={34} />
+                </div>
+                <h3>Conecta con Expertos</h3>
+                <p>Encuentra personas con las habilidades que necesitas aprender y conecta con ellas de manera directa y personal.</p>
+              </div>
+              <div className="what-card">
+                <div className="what-icon what-icon-green">
+                  <LuRepeat size={34} />
+                </div>
+                <h3>Intercambio Justo</h3>
+                <p>No solo aprendes, también enseñas. Cada intercambio es una oportunidad de crecimiento mutuo y colaboración.</p>
+              </div>
+              <div className="what-card">
+                <div className="what-icon what-icon-purple">
+                  <PiTargetDuotone size={34} />
+                </div>
+                <h3>Crecimiento Personal</h3>
+                <p>Desarrolla nuevas competencias mientras contribuyes al crecimiento de otros miembros de la comunidad.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 2. SEGUNDA IMAGEN */}
+          <section className="how-section">
+            <h2 className="how-title">¿Cómo Funciona?</h2>
+            <div className="how-steps">
+              <div className="how-step">
+                <div className="how-circle step-blue">1</div>
+                <h4>Regístrate</h4>
+                <p>Crea tu perfil y describe las habilidades que tienes y las que quieres aprender.</p>
+              </div>
+              <div className="how-step">
+                <div className="how-circle step-green">2</div>
+                <h4>Explora</h4>
+                <p>Busca personas que tengan las habilidades que necesitas y que estén interesadas en las tuyas.</p>
+              </div>
+              <div className="how-step">
+                <div className="how-circle step-purple">3</div>
+                <h4>Conecta</h4>
+                <p>Inicia conversaciones y acuerda los detalles de tu intercambio de habilidades.</p>
+              </div>
+              <div className="how-step">
+                <div className="how-circle step-blue">4</div>
+                <h4>Intercambia</h4>
+                <p>Realiza sesiones de aprendizaje mutuo y haz crecer tu red de conocimientos.</p>
+              </div>
+            </div>
+            <h3 className="how-features-title">Características Principales</h3>
+            <div className="how-features">
+              <div className="how-feature">
+                <FaRegComments size={20} className="how-feature-icon" style={{ color: "#5180f7" }} />
+                <div>
+                  <strong>Chat Integrado</strong>
+                  <p>Comunícate directamente con otros usuarios para coordinar tus intercambios de habilidades.</p>
+                </div>
+              </div>
+              <div className="how-feature">
+                <MdOutlineCalendarMonth size={20} className="how-feature-icon" style={{ color: "#25c47c" }} />
+                <div>
+                  <strong>Programación de Sesiones</strong>
+                  <p>Organiza y programa tus sesiones de intercambio con un sistema de calendario integrado.</p>
+                </div>
+              </div>
+              <div className="how-feature">
+                <PiStarDuotone size={20} className="how-feature-icon" style={{ color: "#7b61ff" }} />
+                <div>
+                  <strong>Sistema de Valoraciones</strong>
+                  <p>Evalúa y recibe evaluaciones de tus intercambios para construir tu reputación en la plataforma.</p>
+                </div>
+              </div>
+              <div className="how-feature">
+                <PiCheckCircleDuotone size={20} className="how-feature-icon" style={{ color: "#5180f7" }} />
+                <div>
+                  <strong>Perfiles Verificados</strong>
+                  <p>Conecta con confianza gracias a nuestro sistema de verificación de usuarios y habilidades.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. TERCERA IMAGEN */}
+          <section className="why-choose-section">
+            <div className="why-choose-bg">
+              <h2 className="why-choose-title">¿Por qué elegir SkillSwap?</h2>
+              <ul className="why-choose-list">
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Aprende habilidades prácticas de expertos reales</li>
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Intercambios justos sin costo monetario</li>
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Comparte tus conocimientos y construye tu reputación</li>
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Flexibilidad total para organizar tus sesiones</li>
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Conecta con una comunidad global de aprendizaje</li>
+                <li><PiCheckCircleDuotone className="why-choose-icon" /> Crecimiento personal y profesional continuo</li>
+              </ul>
+            </div>
+            <div className="why-choose-call">
+              <h2>¿Listo para comenzar tu intercambio?</h2>
+              <p>Únete a miles de personas que ya están intercambiando habilidades y creciendo juntas en SkillSwap.</p>
+              <div className="why-choose-buttons">
+                <button className="why-choose-btn-main" onClick={handleRegisterClick}>
+                  Comenzar Ahora <span style={{fontSize: "1.1em"}}>&rarr;</span>
+                </button>
+                <button className="why-choose-btn-secondary" onClick={handleConoceEquipo}>
+                  Conoce nuestro equipo
+                </button>
+              </div>
             </div>
           </section>
         </main>

@@ -454,3 +454,426 @@ body {
   background: #f0f2f5;
   color: #4e7cf7;
 }
+
+/* === ¿QUÉ ES SKILLSWAP? LANDING === */
+.what-section {
+  margin: 3.2rem auto 0 auto;
+  padding: 0 1.2rem 2.5rem 1.2rem;
+  max-width: 1100px;
+}
+
+.what-title {
+  font-size: 2.7rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.35em;
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.what-subtitle {
+  color: #6b7280;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2.2em;
+  font-weight: 400;
+}
+
+.what-cards {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+.what-card {
+  background: linear-gradient(120deg, #e8eeff 0%, #f3f0ff 100%);
+  border-radius: 15px;
+  box-shadow: 0 2px 18px rgba(44,90,255,0.04);
+  padding: 2.2em 2em 2em 2em;
+  width: 325px;
+  max-width: 94vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.what-card:hover {
+  box-shadow: 0 4px 30px rgba(44,90,255,0.10);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.what-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin-bottom: 1.09em;
+  font-size: 2.1em;
+}
+
+.what-icon-blue {
+  background: #e6edff;
+  color: #4e7cf7;
+}
+
+.what-icon-green {
+  background: #e6f7ea;
+  color: #25c47c;
+}
+
+.what-icon-purple {
+  background: #f3eaff;
+  color: #7b61ff;
+}
+
+.what-card h3 {
+  font-size: 1.18em;
+  color: #181b27;
+  font-weight: 700;
+  margin-bottom: 0.48em;
+}
+
+.what-card p {
+  color: #6b7280;
+  font-size: 1.07em;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --- COMO FUNCIONA / HOW SECTION --- */
+.how-section {
+  margin: 0 auto 0 auto;
+  padding: 2.1rem 1rem 2.5rem 1rem;
+  max-width: 1100px;
+}
+
+.how-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #11192c;
+  text-align: center;
+  margin-bottom: 2.2em;
+}
+
+.how-steps {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.3em;
+}
+
+.how-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+.how-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.45em;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9em;
+}
+
+.step-blue {
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+}
+.step-green {
+  background: #25c47c;
+}
+.step-purple {
+  background: #7b61ff;
+}
+
+.how-step h4 {
+  font-size: 1.07em;
+  margin-bottom: 0.45em;
+  font-weight: 700;
+  color: #222;
+}
+
+.how-step p {
+  color: #6b7280;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.how-features-title {
+  font-weight: 800;
+  font-size: 1.4em;
+  color: #11192c;
+  margin: 2.2em 0 1.1em 0;
+  text-align: center;
+}
+
+.how-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em 3.5em;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.how-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  min-width: 320px;
+  max-width: 400px;
+  margin-bottom: 1em;
+}
+
+.how-feature-icon {
+  margin-top: 0.2em;
+}
+
+.how-feature strong {
+  color: #181b27;
+  font-weight: 700;
+}
+
+.how-feature p {
+  color: #6b7280;
+  margin: 0.2em 0 0 0;
+  font-size: 1.06em;
+}
+
+/* --- POR QUÉ ELEGIR Y CTA FINAL --- */
+.why-choose-section {
+  margin: 0 auto 0 auto;
+  max-width: 1200px;
+  padding: 1.8rem 0 2.5rem 0;
+}
+.why-choose-bg {
+  background: linear-gradient(120deg, #e8eeff 0%, #f3f0ff 100%);
+  border-radius: 18px;
+  padding: 2.1em 2em 1.6em 2em;
+  margin-bottom: 2.2em;
+}
+
+.why-choose-title {
+  font-size: 2em;
+  font-weight: 800;
+  color: #181b27;
+  text-align: center;
+  margin-bottom: 1.6em;
+}
+
+.why-choose-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em 3.5em;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-choose-list li {
+  color: #222;
+  font-size: 1.15em;
+  margin-bottom: 0.6em;
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  max-width: 430px;
+}
+
+.why-choose-icon {
+  font-size: 1.3em;
+  color: #4e7cf7;
+  margin-right: 0.55em;
+}
+
+.why-choose-call {
+  text-align: center;
+}
+
+.why-choose-call h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-bottom: 0.6em;
+}
+
+.why-choose-call p {
+  color: #666;
+  font-size: 1.13em;
+  margin-bottom: 1.7em;
+}
+
+.why-choose-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.3em;
+  flex-wrap: wrap;
+}
+
+.why-choose-btn-main {
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.82em 2.2em;
+  cursor: pointer;
+  transition: background 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  box-shadow: 0 2px 12px rgba(44,90,255,0.07);
+}
+
+.why-choose-btn-main:hover {
+  background: linear-gradient(90deg, #7b61ff 0%, #4e7cf7 100%);
+}
+
+.why-choose-btn-secondary {
+  background: #fff;
+  color: #222;
+  border: none;
+  border-radius: 12px;
+  padding: 0.82em 2.2em;
+  font-weight: 600;
+  font-size: 1.08rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44,90,255,0.06);
+  transition: background 0.18s;
+  border: 1px solid #e8eeff;
+}
+
+.why-choose-btn-secondary:hover {
+  background: #f1f1f1;
+}
+
+@media (max-width: 940px) {
+  .what-cards, .how-steps, .why-choose-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+  .how-features {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.register-section {
+  margin: 3.2rem auto 0 auto;
+  padding: 2.4rem 2rem 2.5rem 2rem;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(44,90,255,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #4e7cf7;
+  text-align: center;
+  margin-bottom: 1.2em;
+  letter-spacing: 0.01em;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  width: 100%;
+  margin-bottom: 1.6em;
+}
+
+.register-input {
+  padding: 0.9em 1em;
+  border-radius: 9px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.08em;
+  background: #f7faff;
+  color: #222;
+  transition: border-color 0.18s, background 0.18s;
+  margin-bottom: 0.08em;
+}
+
+.register-input:focus {
+  border-color: #7b61ff;
+  background: #fff;
+  outline: none;
+}
+
+.register-btn {
+  background: linear-gradient(90deg, #1dd1a1 0%, #10ac84 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 28px;
+  padding: 0.8em 2.3em;
+  cursor: pointer;
+  margin-top: 0.6em;
+  margin-bottom: 0.8em;
+  transition: background 0.18s;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #10ac84 0%, #1dd1a1 100%);
+}
+
+.register-login-btn-main {
+  width: 100%;
+  background: #e8eeff;
+  color: #4e7cf7;
+  font-weight: 700;
+  border: none;
+  border-radius: 28px;
+  padding: 0.8em 2.3em;
+  font-size: 1.08em;
+  margin-bottom: 1.1em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.register-login-btn-main:hover {
+  background: #4e7cf7;
+  color: #fff;
+}
+
+.register-login-link {
+  text-align: center;
+  font-size: 1em;
+  color: #777;
+  margin-top: 0.2em;
+}
+
+.register-login-link-btn {
+  color: #4e7cf7;
+  font-weight: 700;
+  margin-left: 0.4em;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.register-login-link-btn:hover {
+  color: #7b61ff;
+  text-decoration: underline;
+}
