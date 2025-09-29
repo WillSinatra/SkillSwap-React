@@ -1,0 +1,17 @@
+[
+  {
+    "username": "admin",
+    "password": "1234",
+    "skills": ["programacion", "robotica", "finanzas"]
+  },
+  {
+    "username": "maria",
+    "password": "abcd",
+    "skills": ["musica", "canto", "idiomas"]
+  },
+  {
+    "username": "juan",
+    "password": "pass123",
+    "skills": ["dibujo", "arte", "fotografia"]
+  }
+]

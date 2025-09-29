@@ -1,27 +1,7 @@
 import React, { useState } from "react";
-import { PiArrowRightBold, PiArrowLeftBold } from "react-icons/pi"; // asegúrate de importar ambas
+import { PiArrowRightBold, PiArrowLeftBold } from "react-icons/pi";
 import "./UserOnboarding.css";
 
-return (
-  <div className="onboard-bg">
-    <div className="onboard-header">
-      {step > 0 && (
-        <button className="onboard-prev-btn" onClick={prevStep}>
-          <PiArrowLeftBold size={32} />
-        </button>
-      )}
-      <div style={{ flex: 1 }} />
-      <button className="onboard-next-btn" onClick={nextStep}>
-        <PiArrowRightBold size={32} />
-      </button>
-    </div>
-    {renderStepper()}
-    <div className={`onboard-card${animClass}`}>
-      {renderStep()}
-    </div>
-  </div>
-);
-// Simula tus posibles etiquetas (puedes expandir esto)
 const ALL_SKILLS = [
   "programacion", "musica", "dibujo", "idiomas", "matematica",
   "cocina", "deporte", "baile", "canto", "robotica", "historia", "finanzas",
@@ -70,10 +50,9 @@ function UserOnboarding({ onFinish }) {
     howMet: ""
   });
   const [animating, setAnimating] = useState(false);
-  const [slideDirection, setSlideDirection] = useState("next"); //
+  const [slideDirection, setSlideDirection] = useState("next");
 
-  // Para el efecto deslizar
-    function nextStep() {
+  function nextStep() {
     if (step < STEPS.length - 1) {
       setSlideDirection("next");
       setAnimating(true);
@@ -86,7 +65,7 @@ function UserOnboarding({ onFinish }) {
     }
   }
 
-    function prevStep() {
+  function prevStep() {
     if (step > 0) {
       setSlideDirection("prev");
       setAnimating(true);
@@ -113,7 +92,6 @@ function UserOnboarding({ onFinish }) {
     setAnswers(prev => ({ ...prev, howMet: option }));
   }
 
-  // Barra de pasos
   function renderStepper() {
     return (
       <div className="onboard-stepper">
@@ -140,7 +118,6 @@ function UserOnboarding({ onFinish }) {
     );
   }
 
-  // Etiquetas tipo hashtag
   function renderTags(options, stateKey) {
     return (
       <div className="onboard-tags-box">
@@ -160,7 +137,6 @@ function UserOnboarding({ onFinish }) {
     );
   }
 
-  // Opciones tipo botón grande
   function renderOptions(options) {
     return (
       <div className="onboard-options-box">
@@ -180,7 +156,6 @@ function UserOnboarding({ onFinish }) {
     );
   }
 
-  // Contenido de cada paso
   function renderStep() {
     const current = STEPS[step];
     if (current.type === "choose") {
@@ -201,7 +176,6 @@ function UserOnboarding({ onFinish }) {
     return null;
   }
 
-    // Animación bidireccional
   const animClass =
     animating && slideDirection === "next"
       ? " onboard-slide-out"
@@ -230,3 +204,4 @@ function UserOnboarding({ onFinish }) {
 }
 
 export default UserOnboarding;
+

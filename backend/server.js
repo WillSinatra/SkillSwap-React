@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 const PORT = 4000;
@@ -9,9 +11,16 @@ app.use(express.json());
 
 // Middleware para habilitar CORS
 app.use(cors({
-  origin: 'http://localhost:5173', // Puerto por defecto de Vite/React
+  origin: ['http://localhost:5173','http://localhost:8080'], // Puerto por defecto de Vite/React
   credentials: true
 }));
+
+// Leer usuarios desde users.json
+function getUsers() {
+  const usersPath = path.join(__dirname, 'users.json');
+  const data = fs.readFileSync(usersPath, 'utf-8');
+  return JSON.parse(data);
+}
 
 // Endpoint POST /login
 app.post('/login', (req, res) => {
@@ -24,8 +33,11 @@ app.post('/login', (req, res) => {
     });
   }
 
-  // Validar credenciales contra usuario fijo
-  if (username === 'admin' && password === '1234') {
+  const users = getUsers();
+  const user = users.find(u => u.username === username && u.password === password);
+
+  // Validar credenciales contra usuarios en users.json
+  if (user) {
     return res.status(200).json({
       message: 'Login exitoso',
       token: 'abc123'
@@ -35,6 +47,15 @@ app.post('/login', (req, res) => {
       message: 'Credenciales inválidas'
     });
   }
+});
+
+// Nuevo endpoint para obtener perfiles de usuario (sin contraseñas)
+app.get('/users', (req, res) => {
+  const users = getUsers().map(u => ({
+    username: u.username,
+    skills: u.skills || []
+  }));
+  res.json(users);
 });
 
 // Endpoint de prueba para verificar que el servidor funciona
