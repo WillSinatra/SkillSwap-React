@@ -1018,3 +1018,41 @@ body {
   background: #f0f2f5;
   color: #4e7cf7;
 }
+
+/* Hero: Cambiar color de fondo a gradiente violeta (como la segunda imagen) */
+.hero-section {
+  background: linear-gradient(120deg, #f5f4ff 0%, #ededfa 100%) !important;
+}
+
+/* Navbar: Cambiar color del texto superior derecho y agregar efecto de sombreado gris */
+.main-nav {
+  background: #fff !important;
+}
+
+.nav-links .nav-link,
+.nav-links .nav-link-strong {
+  color: #5c7293 !important;
+  transition: color 0.14s, box-shadow 0.14s, background 0.14s;
+  font-weight: 500;
+}
+
+/* Para el link de sesión */
+.nav-links .nav-link-strong {
+  color: #222 !important;
+  font-weight: 700;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link-strong:hover {
+  color: #111 !important;
+  background: #f3f5fa !important;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px #e4e7ec;
+}
+
+/* Mejorar el contraste al hacer hover */
+.nav-links .nav-link-strong:hover {
+  color: #111 !important;
+  background: #f3f5fa !important;
+  box-shadow: 0 2px 12px #d8dae0;
+}

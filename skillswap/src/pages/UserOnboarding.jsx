@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PiArrowRightBold, PiArrowLeftBold } from "react-icons/pi";
 import "./UserOnboarding.css";
+import { useNavigate } from "react-router-dom";
 
 const ALL_SKILLS = [
   "programacion", "musica", "dibujo", "idiomas", "matematica",
@@ -28,12 +29,6 @@ const STEPS = [
     options: ALL_SKILLS
   },
   {
-    title: "¿Qué habilidades tienes?",
-    type: "choose",
-    stateKey: "skillsToOffer",
-    options: ALL_SKILLS
-  },
-  {
     title: "¿Por dónde nos conociste?",
     type: "how-met",
     stateKey: "howMet",
@@ -44,6 +39,7 @@ const STEPS = [
 function UserOnboarding({ onFinish }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({
+  
     skills: [],
     skillsToLearn: [],
     skillsToOffer: [],
@@ -51,20 +47,23 @@ function UserOnboarding({ onFinish }) {
   });
   const [animating, setAnimating] = useState(false);
   const [slideDirection, setSlideDirection] = useState("next");
+  const navigate = useNavigate();
 
-  function nextStep() {
-    if (step < STEPS.length - 1) {
-      setSlideDirection("next");
-      setAnimating(true);
-      setTimeout(() => {
-        setStep(step + 1);
-        setAnimating(false);
-      }, 340);
-    } else if (onFinish) {
-      onFinish(answers);
-    }
+function nextStep() {
+  if (step < STEPS.length - 1) {
+    setSlideDirection("next");
+    setAnimating(true);
+    setTimeout(() => {
+      setStep(step + 1);
+      setAnimating(false);
+    }, 340);
+  } else {
+    // Redirige al foro al finalizar el onboarding
+    navigate("/foro");
+    // Si quieres también llamar a onFinish, puedes hacerlo aquí
+    // if (onFinish) onFinish(answers);
   }
-
+}
   function prevStep() {
     if (step > 0) {
       setSlideDirection("prev");

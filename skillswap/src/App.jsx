@@ -5,6 +5,9 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import UserOnboarding from "./pages/UserOnboarding";
 import ProfilesPage from "./pages/ProfilesPage";
+import Foro from "./pages/Foro";
+import MiCuenta from "./pages/MiCuenta";
+
 
 // Páginas de ejemplo
 function QuienesSomos() {
@@ -25,6 +28,8 @@ function App() {
       <Route path="/que-es-skillswap" element={<QueEsSkillSwap />} />
       <Route path="/onboarding" element={<UserOnboarding />} />
       <Route path="/perfiles" element={<ProfilesPage />} />
+      <Route path="/foro" element={<Foro />} />
+      <Route path="/micuenta" element={<MiCuenta />} />
     </Routes>
   );
 }

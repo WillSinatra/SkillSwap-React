@@ -1,0 +1,352 @@
+.micuenta-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ece9ff 0%, #f7f5ff 100%);
+  padding: 2.5em 0 2em 0;
+}
+
+.micuenta-container {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: micuenta-in 0.7s cubic-bezier(.61,.06,.33,1.01);
+}
+@keyframes micuenta-in {
+  from { opacity: 0; transform: translateY(38px) scale(0.97);}
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.micuenta-card {
+  background: linear-gradient(90deg, #fff 0%, #eae6fd 100%);
+  display: flex;
+  align-items: center;
+  border-radius: 22px;
+  box-shadow: 0 6px 38px rgba(100,80,180,0.14);
+  padding: 2.2em 2em 1.3em 1.5em;
+  gap: 2.1em;
+  margin-bottom: 2.2em;
+}
+
+.micuenta-avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #7b61ff;
+  color: #fff;
+  font-size: 2.6em;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 14px rgba(100,120,200,0.15);
+  overflow: hidden;
+}
+.micuenta-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+
+.micuenta-info {
+  flex: 1;
+}
+
+.micuenta-nombre {
+  font-size: 1.7em;
+  font-weight: 800;
+  margin-bottom: 0.08em;
+  color: #2a1857;
+}
+.micuenta-username {
+  color: #7b61ff;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  font-size: 1.12em;
+}
+.micuenta-email {
+  color: #4e7cf7;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+.micuenta-bio {
+  color: #444;
+  font-size: 1.12em;
+  margin-bottom: 1.2em;
+  font-style: italic;
+}
+
+.micuenta-social {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 1.1em;
+  align-items: flex-end;
+}
+.micuenta-social-list {
+  display: flex;
+  gap: 0.33em;
+  margin-top: 0.15em;
+}
+.micuenta-mini-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4e7cf7;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 7px rgba(100,120,200,0.11);
+}
+
+.micuenta-btn-edit {
+  background: linear-gradient(90deg, #fff 0%, #c8d4ff 100%);
+  color: #7b61ff;
+  font-weight: 700;
+  font-size: 1.08em;
+  border: none;
+  border-radius: 28px;
+  padding: 0.63em 2.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44,90,255,0.11);
+  transition: background 0.17s, color 0.17s, box-shadow 0.14s, transform 0.13s;
+}
+.micuenta-btn-edit:hover {
+  background: linear-gradient(90deg, #d6daf3 0%, #e0e6ff 100%);
+  color: #4747d1;
+  box-shadow: 0 4px 18px rgba(44,90,255,0.15);
+  transform: scale(1.04);
+}
+
+.micuenta-habs {
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #f8f9ff 0%, #f3f1ff 100%);
+  border-radius: 15px;
+  box-shadow: 0 2px 16px rgba(100, 80, 180, 0.09);
+  padding: 1.5em 1.7em 1.2em 1.7em;
+  margin-bottom: 2em;
+}
+.micuenta-habs > div {
+  flex: 1;
+}
+.micuenta-habs h3 {
+  color: #7b61ff;
+  font-size: 1.14em;
+  font-weight: 800;
+  margin-bottom: 0.7em;
+}
+
+.micuenta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+}
+.micuenta-tag {
+  background: linear-gradient(90deg, #e8e4ff 0%, #c8d4ff 100%);
+  color: #7b61ff;
+  border-radius: 7px;
+  padding: 0.3em 1em;
+  font-size: 1.06em;
+  font-weight: 700;
+  box-shadow: 0 2px 7px rgba(100,150,200,0.07);
+  margin-bottom: 0.1em;
+  letter-spacing: 0.02em;
+  transition: background 0.14s, color 0.14s;
+}
+.micuenta-tag-aprender {
+  background: linear-gradient(90deg, #f2eaff 0%, #e6f0ff 100%);
+  color: #4e7cf7;
+}
+.micuenta-tag:hover {
+  background: linear-gradient(90deg, #7b61ff 0%, #4e7cf7 100%);
+  color: #fff;
+}
+
+.micuenta-mis-posts {
+  background: linear-gradient(90deg, #f8f9ff 0%, #f3f1ff 100%);
+  border-radius: 15px;
+  box-shadow: 0 2px 16px rgba(100, 80, 180, 0.09);
+  padding: 1.5em 1.7em 1.2em 1.7em;
+  margin-bottom: 2em;
+}
+.micuenta-mis-posts h3 {
+  color: #4e7cf7;
+  font-size: 1.14em;
+  font-weight: 800;
+  margin-bottom: 0.7em;
+}
+.micuenta-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+.micuenta-post-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(100,80,180,0.10);
+  padding: 1.15em 1.1em 1em 1.1em;
+  animation: micuenta-post-in 0.6s cubic-bezier(.61,.06,.33,1.01);
+}
+@keyframes micuenta-post-in {
+  from { opacity: 0; transform: translateY(18px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.micuenta-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7b61ff;
+  font-weight: 700;
+  font-size: 1.08em;
+  margin-bottom: 0.3em;
+}
+.micuenta-post-title {
+  font-weight: 800;
+}
+.micuenta-post-date {
+  color: #a39fbe;
+  font-size: 0.97em;
+  font-weight: 500;
+}
+.micuenta-post-content {
+  color: #35305c;
+  font-size: 1.08em;
+  margin-bottom: 0.8em;
+  font-weight: 500;
+}
+.micuenta-post-tags {
+  display: flex;
+  gap: 0.6em;
+  flex-wrap: wrap;
+}
+
+.micuenta-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(70, 60, 120, 0.16);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: micuenta-in 0.29s cubic-bezier(.61,.06,.33,1.01);
+}
+.micuenta-modal {
+  background: linear-gradient(120deg, #f6f5ff 0%, #ece9ff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 36px rgba(100, 80, 180, 0.18);
+  padding: 2.3em 2em 1.7em 2em;
+  min-width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.12em;
+  animation: micuenta-modal-in 0.4s cubic-bezier(.61,.06,.33,1.01);
+}
+@keyframes micuenta-modal-in {
+  from { opacity: 0; transform: scale(0.93);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.micuenta-modal-input, .micuenta-modal-textarea {
+  background: #fff;
+  border: 1px solid #e8e4ff;
+  border-radius: 8px;
+  padding: 0.7em 1.1em;
+  font-size: 1.1em;
+  color: #2a1857;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.15s;
+}
+.micuenta-modal-input:focus, .micuenta-modal-textarea:focus {
+  border: 1.5px solid #7b61ff;
+}
+.micuenta-modal-textarea {
+  resize: vertical;
+  min-height: 60px;
+  max-height: 170px;
+}
+
+.micuenta-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.micuenta-btn-cancel {
+  background: #fff;
+  color: #7b61ff;
+  border: 1px solid #7b61ff;
+  border-radius: 28px;
+  padding: 0.7em 2em;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s, border 0.16s;
+}
+.micuenta-btn-cancel:hover {
+  background: #f3f0ff;
+  color: #4e7cf7;
+  border: 1.5px solid #4e7cf7;
+}
+.micuenta-btn-save {
+  background: linear-gradient(90deg, #7b61ff 0%, #4e7cf7 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 28px;
+  padding: 0.7em 2em;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s, box-shadow 0.16s;
+  box-shadow: 0 2px 7px rgba(44,90,255,0.09);
+}
+.micuenta-btn-save:hover {
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(44,90,255,0.14);
+}
+
+@media (max-width: 700px) {
+  .micuenta-card { flex-direction: column; align-items: center; gap: 0.8em; padding: 1.2em 0.7em 0.9em 0.7em; }
+  .micuenta-habs { flex-direction: column; gap: 1.4em; padding: 1em 0.7em 0.8em 0.7em; }
+  .micuenta-container { padding: 0 0.2em; }
+  .micuenta-mis-posts { padding: 0.8em 0.7em 0.8em 0.7em;}
+}
+
+.micuenta-back-bar {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 1.1em;
+}
+
+.micuenta-back-btn {
+  background: linear-gradient(90deg, #7b61ff 0%, #4e7cf7 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.06em;
+  border: none;
+  border-radius: 18px;
+  padding: 0.5em 1.5em 0.5em 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  box-shadow: 0 2px 10px rgba(44,90,255,0.11);
+  transition: background 0.18s, color 0.18s, box-shadow 0.15s, transform 0.13s;
+  margin-left: 1.8em;
+  margin-bottom: 0.5em;
+}
+.micuenta-back-btn:hover {
+  background: linear-gradient(90deg, #4e7cf7 0%, #7b61ff 100%);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(44,90,255,0.17);
+  transform: scale(1.04);
+}
