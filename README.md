@@ -82,6 +82,12 @@ iniciar_skillswap.bat
 - Después de unos segundos, la página se abrirá automáticamente en tu navegador en [http://localhost:5173](http://localhost:5173).
 - ¡Listo! Ya puedes registrarte, iniciar sesión y explorar perfiles.
 
+**NOTA:** Los usuarios disponibles son los siguientes:
+_user:admin contraseña:1234
+_user:maria contraseña:abcd
+_user:juan contraseña:pass123
+(son puramente ficticios para la prueba del mvp)
+
 > **Nota:** Si la página se abre dos veces, asegúrate de que el script de inicio del frontend (`skillswap/package.json`) tenga la opción `--open false` o `--no-open` para evitar que Vite abra el navegador automáticamente.
 
 ---
