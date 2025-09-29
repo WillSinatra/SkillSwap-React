@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import UserOnboarding from "./pages/UserOnboarding";
 
 // Páginas de ejemplo
 function QuienesSomos() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/quienes-somos" element={<QuienesSomos />} />
       <Route path="/que-es-skillswap" element={<QueEsSkillSwap />} />
+      <Route path="/onboarding" element={<UserOnboarding />} />
     </Routes>
   );
 }

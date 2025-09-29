@@ -17,6 +17,11 @@ function HomePage() {
   const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
   
+  function handleRegister(e) {
+  e.preventDefault();
+  // ...aquí podrías enviar los datos del registro a tu backend...
+  navigate("/onboarding");
+}
 
   useEffect(() => {
     if (window.location.hash === "#register") {
@@ -187,7 +192,7 @@ function HomePage() {
   <main>
     <section className="register-section" id="register-section">
       <h2 className="register-title">Registro</h2>
-      <form className="register-form">
+      <form className="register-form" onSubmit={handleRegister}>
         <input type="text" placeholder="Usuario" className="register-input" required />
         <input type="email" placeholder="Correo Electrónico" className="register-input" required />
         <input type="password" placeholder="Contraseña" className="register-input" required />
